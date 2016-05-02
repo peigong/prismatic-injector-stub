@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/peigong/prismatic-injector-stub/issues"
   },
-  "devDependencies": {
+  "dependencies": {
       "koa": "^2.0.0",
       "koa-route": "^3.1.0",
       "koa-static": "^3.0.0",
