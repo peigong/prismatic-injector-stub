@@ -8,7 +8,7 @@
       "email": "peigong@foxmail.com",
       "url": "http://www.peigong.net"
   },
-  "files": ["server"],
+  "files": ["server", "src"],
   "main": "server/app.js",
   "repository": {
     "type": "git",
