@@ -1,0 +1,32 @@
+{
+  "name": "prismatic-injector-stub",
+  "version": "0.0.1",
+  "description": "棱镜注射器服务器桩",
+  "homepage": "https://github.com/peigong/prismatic-injector-stub#readme",
+  "author": {
+      "name": "周培公",
+      "email": "peigong@foxmail.com",
+      "url": "http://www.peigong.net"
+  },
+  "files": ["server"],
+  "main": "server/app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peigong/prismatic-injector-stub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/peigong/prismatic-injector-stub/issues"
+  },
+  "devDependencies": {
+      "koa": "^2.0.0",
+      "koa-route": "^3.1.0",
+      "koa-static": "^3.0.0",
+      "koa-safe-jsonp": "^0.3.1"
+  },
+  "scripts": {
+    "test": "gulp",
+    "prebuild": "npm install",
+    "build": "node ./server/app.js"
+  },
+  "license": "MIT"
+}
