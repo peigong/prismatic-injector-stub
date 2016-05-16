@@ -12,13 +12,17 @@ const api = require('./api.js');
 const  app = new koa();
 jsonp(app);
 
-app.use(serve('./dist'));
-app.use(route.get('/opt.do', opt));
-app.use(route.get('/api/:api(.+)', api));
+module.exports = function(options){
+    options = options || {};
+    var service = options.opt || 'opt.do';
+    app.use(serve('./dist'));
+    app.use(route.get(['/', service].join(''), opt));
+    app.use(route.get('/api/:api(.+)', api));
 
-http.createServer(app.callback()).listen(3080);
-console.log('needle & opt server listening on port 3080');
-http.createServer(app.callback()).listen(3081);
-console.log('template server listening on port 3081');
-http.createServer(app.callback()).listen(3082);
-console.log('api server listening on port 3082');
+    http.createServer(app.callback()).listen(3080);
+    console.log('needle & opt server listening on port 3080');
+    http.createServer(app.callback()).listen(3081);
+    console.log('template server listening on port 3081');
+    http.createServer(app.callback()).listen(3082);
+    console.log('api server listening on port 3082');
+};
