@@ -1,7 +1,17 @@
 'use strict';
 
-module.exports = {
+const fs = require('fs');
+const loc = [process.cwd(), 'loc.json'].join('/');
+
+var hostname = 'localhost';
+if(fs.existsSync(loc)){
+    hostname = require(loc).hostname;
+}
+
+const config = {
     dir: 'dist',
-    template: 'http://localhost:3081/templates',
-    service: 'http://localhost:3082/api'
+    template: `http://${ hostname }:3081/templates`,
+    service: `http://${ hostname }:3082/api`
 };
+
+module.exports = config; 
