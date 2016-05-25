@@ -14,3 +14,17 @@
 ## 测试脚本 ##
 
 	node ./test/server
+
+## 桩服务配置 ##
+
+系统默认使用`localhost`访问服务。
+
+如果需要更改，可以在项目目录下增加`loc.json`配置文件。
+
+配置文件内容如下：
+
+    {
+        "hostname": "localhost"
+    }
+
+- **hostname：**访问服务的域名或IP地址。
